@@ -8,6 +8,7 @@ use App\Models\Category;
 use App\Models\Post;
 use App\Models\Tag;
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\Storage;
 
 class DatabaseSeeder extends Seeder
 {
@@ -25,9 +26,11 @@ class DatabaseSeeder extends Seeder
         //     'email' => 'test@example.com',
         // ]);
 
+        //Storage::makeDirectory('posts');
         $this->call(UserSeeder::class);
         Category::factory(4)->create();
         Tag::factory(8)->create();
-        Post::factory(10)->create();
+        //Post::factory(10)->create();
+        $this->call(PostSeeder::class);
     }
 }
