@@ -1,0 +1,22 @@
+<table>
+    <tr>
+        <td>Id</td>
+        <td>Nombre</td>
+        <td>Descripcion</td>
+        <td>Tipo</td>
+        <td>Color</td>
+        <td>Estado</td>
+        <td>Ciclo_id</td>
+    </tr>
+    @foreach ($grupo as $item)
+        <tr>
+            <td>{{$item->id}}</td>
+            <td>{{$item->name}}</td>
+            <td>{{$item->description}}</td>
+            <td>{{$item->type}}</td>
+            <td>{{$item->color}}</td>
+            <td>{{$item->status}}</td>
+            <td>{{$item->cycle_id}}</td>
+        </tr>
+    @endforeach
+</table>

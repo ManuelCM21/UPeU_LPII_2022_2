@@ -1,0 +1,24 @@
+<table>
+    <tr>
+        <td>Id</td>
+        <td>Nombre</td>
+        <td>Apellidos</td>
+        <td>Cumpleaños</td>
+        <td>DNI</td>
+        <td>Tipo</td>
+        <td>Numero</td>
+        <td>Observaciones</td>
+    </tr>
+    @foreach ($jugadores as $item)
+        <tr>
+            <td>{{$item->id}}</td>
+            <td>{{$item->name}}</td>
+            <td>{{$item->lastname}}</td>
+            <td>{{$item->birthdate}}</td>
+            <td>{{$item->dni}}</td>
+            <td>{{$item->type}}</td>
+            <td>{{$item->number}}</td>
+            <td>{{$item->observations}}</td>
+        </tr>
+    @endforeach
+</table>
