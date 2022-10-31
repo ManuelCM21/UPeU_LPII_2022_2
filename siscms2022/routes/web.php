@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\PostController;
 use App\Http\Livewire\CategoryLivewire;
+use App\Http\Livewire\TagLivewire;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -32,4 +33,5 @@ Route::middleware([
         return view('dashboard');
     })->name('dashboard');
     Route::get('/categories', CategoryLivewire::class)->name('categories');
+    Route::get('/tags', TagLivewire::class)->name('tags');
 });

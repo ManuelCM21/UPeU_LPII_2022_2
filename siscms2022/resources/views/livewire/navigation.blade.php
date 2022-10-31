@@ -36,6 +36,9 @@
                             <a href="{{ route('categories') }}"
                                 class="bg-gray-900 hover:bg-gray-700 hover:text-white text-white block px-3 py-2 rounded-md text-base font-medium"
                                 aria-current="page">Categorias</a>
+                            <a href="{{ route('tags') }}"
+                                class="bg-gray-900 hover:bg-gray-700 hover:text-white text-white block px-3 py-2 rounded-md text-base font-medium"
+                                aria-current="page">Tags</a>
                         @else
                             @foreach ($categories as $category)
                                 <a href="{{ route('posts.category', $category) }}"
@@ -74,15 +77,15 @@
                         </div>
 
                         <!--
-                                  Dropdown menu, show/hide based on menu state.
+                                      Dropdown menu, show/hide based on menu state.
 
-                                  Entering: "transition ease-out duration-100"
-                                    From: "transform opacity-0 scale-95"
-                                    To: "transform opacity-100 scale-100"
-                                  Leaving: "transition ease-in duration-75"
-                                    From: "transform opacity-100 scale-100"
-                                    To: "transform opacity-0 scale-95"
-                                -->
+                                      Entering: "transition ease-out duration-100"
+                                        From: "transform opacity-0 scale-95"
+                                        To: "transform opacity-100 scale-100"
+                                      Leaving: "transition ease-in duration-75"
+                                        From: "transform opacity-100 scale-100"
+                                        To: "transform opacity-0 scale-95"
+                                    -->
                         <div x-show="open" @click.outside="open = false"
                             class="absolute right-0 z-10 mt-2 w-48 origin-top-right rounded-md bg-white py-1 shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none"
                             role="menu" aria-orientation="vertical" aria-labelledby="user-menu-button" tabindex="-1">
@@ -94,7 +97,7 @@
                                 class="text-sm text-gray-700 hover:bg-gray-500 hover:text-white block px-3 py-2 rounded-md"
                                 role="menuitem" tabindex="-1" id="user-menu-item-1">Settings</a>
                             <!--<a href="#" class="text-sm text-gray-700 hover:bg-gray-500 hover:text-white block px-3 py-2 rounded-md" role="menuitem" tabindex="-1" id="user-menu-item-2">Sign out</a>
-                                  -->
+                                      -->
                             <form method="POST" action="{{ route('logout') }}" x-data>
                                 @csrf
 
