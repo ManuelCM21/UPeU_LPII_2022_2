@@ -1,23 +1,23 @@
 <div>
     <x-jet-dialog-modal wire:model="isOpen">
         <x-slot name="title">
-            <h3>Registro nueva categoría</h3>
+            <h3>Registro nuevo tag</h3>
         </x-slot>
         <x-slot name="content">
             <form>
-                <input type="hidden" wire:model="category.id">
+                <input type="hidden" wire:model="tag.id">
                 <div class="flex justify-between mx-2 mb-6">
                     <div class="mb-2 md:mr-2 md:mb-0 w-full">
-                        <x-jet-label value="Nombre categoría" class="font-bold" />
-                        <x-jet-input type="text" wire:model="category.name" class="w-full" />
-                        <x-jet-input-error for="category.name" />
+                        <x-jet-label value="Nombre tag" class="font-bold" />
+                        <x-jet-input type="text" wire:model="tag.name" class="w-full" />
+                        <x-jet-input-error for="tag.name" />
                     </div>
                 </div>
                 <div class="flex justify-between mx-2 mb-6">
                     <div class="mb-2 md:mr-2 md:mb-0 w-full">
-                        <x-jet-label value="Slug del categoría" class="font-bold" />
-                        <x-jet-input type="text" wire:model.defer="category.slug" class="w-full" />
-                        <x-jet-input-error for="category.slug" />
+                        <x-jet-label value="Slug del tag" class="font-bold" />
+                        <x-jet-input type="text" wire:model.defer="tag.slug" class="w-full" />
+                        <x-jet-input-error for="tag.slug" />
                     </div>
                 </div>
             </form>

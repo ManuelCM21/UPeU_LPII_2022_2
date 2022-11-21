@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\PostController;
 use App\Http\Livewire\CrudCategory;
+use App\Http\Livewire\CrudTag;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -19,9 +20,10 @@ Route::get('/', function () {
     return view('welcome');
 });
 */
-Route::get('/',[PostController::class,'index'])->name('posts.index');
-Route::get('category/{category}',[PostController::class,'category'])->name('posts.category');
-Route::get('post/{post}',[PostController::class,'show'])->name('posts.show');
+
+Route::get('/', [PostController::class, 'index'])->name('posts.index');
+Route::get('category/{category}', [PostController::class, 'category'])->name('posts.category');
+Route::get('post/{post}', [PostController::class, 'show'])->name('posts.show');
 
 Route::middleware([
     'auth:sanctum',
@@ -31,7 +33,6 @@ Route::middleware([
     Route::get('/dashboard', function () {
         return view('dashboard');
     })->name('dashboard');
-    Route::get('/categories',CrudCategory::class)->name('categories');
+    Route::get('/categories', CrudCategory::class)->name('categories');
+    Route::get('/tags', CrudTag::class)->name('tags');
 });
-
-
